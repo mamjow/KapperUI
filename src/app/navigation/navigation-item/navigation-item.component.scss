@@ -1,0 +1,16 @@
+
+.nav-item {
+    width: calc(100vw /4);
+    height: calc(10vh - 20px);
+    display: flex;
+    background-color: rgba(218, 218, 218, 0.7);
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    &:hover {
+      background-color: rgba(90, 77, 165, 0.418);
+    }
+  }

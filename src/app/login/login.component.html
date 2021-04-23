@@ -1,0 +1,19 @@
+<div class="loginWrapper">
+
+    
+<div class="loginHolder">
+    <h2>login Panel</h2>
+
+    <div class="form__group field">
+        <input type="input" class="form__field" placeholder="Username" name="username" id='username' required />
+        <label for="username" class="form__label">Username</label>
+      </div>
+
+      <div class="form__group field">
+        <input #myDiv type="input" class="form__field" placeholder="Wachtwoord" name="password" id='password' required />
+        <label for="password" class="form__label">Wachtwoord</label>
+      </div>
+
+      <div class="form__btn" (click)="sendLoginRequest()">Login</div>
+</div>
+</div>
