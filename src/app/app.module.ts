@@ -15,6 +15,7 @@ import { NavigationItemComponent } from './navigation/navigation-item/navigation
 import { LogoutComponent } from './logout/logout.component';
 import { DateblockComponent } from './reserve-dashboard/dateblock/dateblock.component';
 import { TimeblockComponent } from './reserve-dashboard/dateblock/timeblock/timeblock.component';
+import { ReserveDashboardComponent } from './reserve-dashboard/reserve-dashboard.component';
 
 
 
@@ -27,6 +28,7 @@ import { TimeblockComponent } from './reserve-dashboard/dateblock/timeblock/time
     LogoutComponent,
     DateblockComponent,
     TimeblockComponent,
+    ReserveDashboardComponent,
    // routingComponents,
   ],
   imports: [

@@ -1,1 +1,9 @@
-<p>dateblock works!</p>
+<div class="date-col" *ngIf="dayBlock" >
+    <div class ="date">
+        {{ dayBlock.key | date:'EEE d-LL-y ' }}
+    </div>
+    <app-timeblock  *ngFor="let timeBlock of dayBlock.value" [block]="timeBlock"  [dateValue]="dayBlock.key">
+
+    </app-timeblock>
+</div>
+    

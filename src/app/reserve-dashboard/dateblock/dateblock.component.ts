@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ScheduleTimeBlock } from 'src/model/ScheduleBlock.model';
 
 @Component({
   selector: 'app-date-block',
@@ -6,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dateblock.component.scss']
 })
 export class DateblockComponent implements OnInit {
-
-  daySchedule: Object[] = [];
+  @Input()
+  dayBlock!: { key: Date; value: ScheduleTimeBlock[]; };
   
-  constructor() { }
+  constructor() {   }
+
 
   ngOnInit(): void {
-  }
+}
   
 }

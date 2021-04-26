@@ -18,7 +18,6 @@ export class ReserveDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.weekSchedule = this._reserve.getWeekSchedule();
-    console.log(this.weekSchedule);
   }
 
 }

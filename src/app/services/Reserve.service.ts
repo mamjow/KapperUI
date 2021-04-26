@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClientWithHeader } from './http-header.service';
-import { DatePipe } from '@angular/common';
-import { tap } from 'rxjs/operators';
+
 
 
 @Injectable({
@@ -11,42 +10,40 @@ import { tap } from 'rxjs/operators';
 
 export class ReserveService {
     private url_adress = "api/getSchedulePlan";
-    myDate: any = new Date();
+    myDate: Date = new Date();
     /**
      *
      */
-    constructor(private _http: HttpClientWithHeader, private datePipe: DatePipe) {
-        // this.myDate = this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
+    constructor(private _http: HttpClientWithHeader) {
 
     }
 
 
     getWeekSchedule() {
-        var myList: Object[] = [];
+        var myList: { key: Date; value: Object; }[]= [];
         for (var _i = 0; _i < 7; _i++) {
             this.myDate.setDate(this.myDate.getDate() + 1);
 
-            this.getDaySchedule(this.myDate).subscribe(data => myList.push(data));
+            // console.log("before call get day  " + this.myDate);
+            let tempDate= new Date(this.myDate);
+            this.getDaySchedule(tempDate).subscribe(data =>{
+                let item = {
+                    key: tempDate,
+                    value : data
+                };
+                myList.push(item);
+            } );
 
           }
+          console.log(myList);
           return myList;
 
     }
 
 
-    private getDaySchedule(date: Date) {
-        // const timeBlockList = this._http.post(this.url_adress, date).pipe(
-        //     tap(
-        //         data => {
-        //             console.log("hoi");
-        //             console.log(data);
-        //         },
-        //         () => {
-        //             console.log("Fout");
-        //         }
-        //     ));
-
-        return this._http.post(this.url_adress, date);
+    private getDaySchedule(date: any) {
+        const timeBlockList = this._http.post(this.url_adress, date).pipe();
+        return timeBlockList;
 
     }
 
@@ -60,3 +57,4 @@ export class ReserveService {
 
 
 }
+

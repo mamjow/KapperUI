@@ -1,3 +1,3 @@
 <div class="reserve-container">
-    <app-date-block></app-date-block>
+    <app-date-block *ngFor="let daySchedule of weekSchedule" [dayBlock]="daySchedule"></app-date-block>
 </div>
