@@ -1,0 +1,30 @@
+.date-timeblock{
+    margin:5px;
+    padding:5px;
+    background:  var(--timeblock-neutral);
+    height: 5vh;
+    min-height: 35px;
+    min-width:100px;
+    border-radius:5px;
+    display :flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .date-timeblock.free{
+      cursor:pointer;
+      background:  var(--timeblock-free);
+    transition : transform 200ms ease-in, filter 200ms ease-in;
+    
+    &:hover{
+      filter: grayscale(80%);
+       transform: scale(1.2);
+    }
+  }
+  .date-timeblock.busy{
+    cursor:no-drop;
+    background:  var(--timeblock-busy);
+  }
+  
+  

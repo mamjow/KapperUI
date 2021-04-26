@@ -7,10 +7,14 @@ import { AppRoutingModule, } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { CookieService } from 'ngx-cookie-service';
+import { DatePipe } from '@angular/common';
+
 import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { NavigationItemComponent } from './navigation/navigation-item/navigation-item.component';
 import { LogoutComponent } from './logout/logout.component';
+import { DateblockComponent } from './reserve-dashboard/dateblock/dateblock.component';
+import { TimeblockComponent } from './reserve-dashboard/dateblock/timeblock/timeblock.component';
 
 
 
@@ -21,6 +25,8 @@ import { LogoutComponent } from './logout/logout.component';
     NavigationComponent,
     NavigationItemComponent,
     LogoutComponent,
+    DateblockComponent,
+    TimeblockComponent,
    // routingComponents,
   ],
   imports: [
@@ -30,7 +36,8 @@ import { LogoutComponent } from './logout/logout.component';
     AppRoutingModule
   ],
   providers: [
-    CookieService
+    CookieService,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })
