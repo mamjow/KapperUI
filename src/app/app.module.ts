@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterFeedBackComponent } from './registration/register-feed-back/register-feed-back.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
+import { ReservarionCancelingApprovalComponent } from './reserve-dashboard/dateblock/timeblock/reservarion-canceling-approval/reservarion-canceling-approval.component';
 
 
 
@@ -41,6 +42,7 @@ import {MatButtonModule} from '@angular/material/button';
    ENumToStringPipe,
    RegistrationComponent,
    RegisterFeedBackComponent,
+   ReservarionCancelingApprovalComponent,
 
   ],
   imports: [
