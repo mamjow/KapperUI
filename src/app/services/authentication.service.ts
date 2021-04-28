@@ -53,6 +53,10 @@ export class AuthenticationService {
         this.deleteAuthTokenInCookies();
     }
 
+    
+    isLoggedIn(){
+        return this.coockie.check("auth");
+    }
 
 }
 export interface LoginResponse {

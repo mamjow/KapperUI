@@ -1,10 +1,11 @@
 
 <div ng-if="block">
-<div  [className]="block.isAvailable ? 'date-timeblock free' : 'date-timeblock busy'" (click)="myFunction()">
+<div  [className]="componentClass" (click)="reserveAttemp()">
 
-    <div ng-if="block.appointmentTimeBlock">
-        {{ ScheduleTimeBlock[block.appointmentTimeBlock]  }}
-    </div>
+        <div ng-if="block.appointmentTimeBlock">
+                {{ block.appointmentTimeBlock | eNumToString }}
+        </div>
+
 
 </div>
 </div>

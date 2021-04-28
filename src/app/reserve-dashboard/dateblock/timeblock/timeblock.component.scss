@@ -9,6 +9,7 @@
     display :flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
   
   }
   
@@ -22,6 +23,14 @@
        transform: scale(1.2);
     }
   }
+
+  .date-timeblock.ownIt{
+    cursor:pointer;
+    background:  var(--timeblock-editable);
+
+
+  }
+
   .date-timeblock.busy{
     cursor:no-drop;
     background:  var(--timeblock-busy);

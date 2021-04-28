@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ScheduleTimeBlock } from 'src/model/ScheduleBlock.model';
+import { ScheduleTimeBlock } from 'src/model/ScheduleTimeBlock.model';
 
 @Component({
   selector: 'app-date-block',
@@ -8,7 +8,7 @@ import { ScheduleTimeBlock } from 'src/model/ScheduleBlock.model';
 })
 export class DateblockComponent implements OnInit {
   @Input()
-  dayBlock!: { key: Date; value: ScheduleTimeBlock[]; };
+  dayBlock: { key: Date; value: ScheduleTimeBlock[]; } | undefined;
   
   constructor() {   }
 

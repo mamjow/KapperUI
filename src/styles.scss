@@ -1,12 +1,50 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$kapper-app-primary: mat-palette($mat-indigo);
+$kapper-app-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$kapper-app-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$kapper-app-theme: mat-light-theme((
+  color: (
+    primary: $kapper-app-primary,
+    accent: $kapper-app-accent,
+    warn: $kapper-app-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($kapper-app-theme);
+
 /* You can add global styles to this file, and also import other style files */
 
 :root {
     --timeblock-busy: brown;
     --timeblock-free: green;
     --timeblock-neutral: lightgray;
+    --timeblock-editable: lightblue;
   }
 body{
     background: radial-gradient(circle, rgb(53, 10, 82) 0%, rgb(69, 48, 82) 50%, rgba(69, 48, 82,1) 100%);
     font-family: "Roboto", sans-serif;
     color: whitesmoke;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '../services/authentication.service';
 import { ReserveService } from '../services/Reserve.service';
 
 
@@ -10,14 +12,19 @@ import { ReserveService } from '../services/Reserve.service';
 })
 export class ReserveDashboardComponent implements OnInit {
 
-  weekSchedule: Object[] = [];
+  weekSchedule: any[] = [] ;
 
-  constructor(private _reserve: ReserveService){
-
+  today: Date = new Date();
+  
+  constructor(private _reserve: ReserveService, private _authService: AuthenticationService, private _router: Router){
+    if(!_authService.isLoggedIn()){
+      this._router.navigateByUrl('/');
+    }
+    console.log(_authService.isLoggedIn());
   }
 
   ngOnInit(): void {
-    this.weekSchedule = this._reserve.getWeekSchedule();
+    this.weekSchedule = this._reserve.getWeekSchedule(this.today);
   }
 
 }

@@ -7,6 +7,7 @@ import { AppRoutingModule, } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { CookieService } from 'ngx-cookie-service';
+
 import { DatePipe } from '@angular/common';
 
 import { HomeComponent } from './home/home.component';
@@ -16,6 +17,13 @@ import { LogoutComponent } from './logout/logout.component';
 import { DateblockComponent } from './reserve-dashboard/dateblock/dateblock.component';
 import { TimeblockComponent } from './reserve-dashboard/dateblock/timeblock/timeblock.component';
 import { ReserveDashboardComponent } from './reserve-dashboard/reserve-dashboard.component';
+import { ENumToStringPipe } from './services/enumToString.pipe';
+import { RegistrationComponent } from './registration/registration.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterFeedBackComponent } from './registration/register-feed-back/register-feed-back.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+
 
 
 
@@ -30,12 +38,19 @@ import { ReserveDashboardComponent } from './reserve-dashboard/reserve-dashboard
     TimeblockComponent,
     ReserveDashboardComponent,
    // routingComponents,
+   ENumToStringPipe,
+   RegistrationComponent,
+   RegisterFeedBackComponent,
+
   ],
   imports: [
     BrowserModule,
     // import HttpClientModule after BrowserModule.
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule,
   ],
   providers: [
     CookieService,

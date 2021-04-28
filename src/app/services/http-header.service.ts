@@ -22,10 +22,10 @@ export class HttpClientWithHeader {
     });
   }
 
-  post(url: string, data: any) {
+  post(url: string, data: any, returnType: any = undefined) {
     let headers = this.createAuthorizationHeader();
     
-    return this.http.post(url, data, {
+    return this.http.post<typeof returnType>(url, data, {
         headers
     });
   }

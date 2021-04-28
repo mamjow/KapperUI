@@ -12,22 +12,21 @@ export class NavigationComponent implements OnInit {
     {name:"Home", link:"/"},
     {name:"login", link:"/login"},
     {name:"Register", link:"/register"},
-    {name:"Reserve", link:"/reserve"},
   ];
   eventListener: any;
 
-  constructor(private _authService: AuthenticationService ,private _cookie: CookieService) { }
+  constructor(private _authService: AuthenticationService ) { }
 
   ngOnInit(): void {
     // this.checkLoginStat();
     this.eventListener = this._authService.loggedin.subscribe( () =>{ this.checkLoginStat();});
-
+    this.checkLoginStat();
   }
 
 
   checkLoginStat()
   {
-    if(this._cookie.get("auth"))
+    if(this._authService.isLoggedIn())
     {
       this.changeMenuItemToLoggedIn();
     }else{
@@ -51,7 +50,6 @@ export class NavigationComponent implements OnInit {
       {name:"Home", link:"/"},
       {name:"login", link:"/login"},
       {name:"Register", link:"/register"},
-      {name:"Reserve", link:"/reserve"},
     ];
 
   }

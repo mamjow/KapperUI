@@ -1,0 +1,29 @@
+<div class="registerWrapper">
+
+    
+    <div class="registerHolder">
+        <h2>Register Form</h2>
+    
+        <div class="form__group field">
+            <input type="input" class="form__field" placeholder="Firstname" name="Firstname" id='Firstname' required />
+            <label for="Firstname" class="form__label">Firstname</label>
+          </div>
+
+          <div class="form__group field">
+            <input type="input" class="form__field" placeholder="Infix" name="Infix" id='Infix' required />
+            <label for="Infix" class="form__label">Infix</label>
+          </div>
+
+          <div class="form__group field">
+            <input type="input" class="form__field" placeholder="Lastname" name="Lastname" id='Lastname' required />
+            <label for="Lastname" class="form__label">Lastname</label>
+          </div>
+    
+          <div class="form__group field">
+            <input #myDiv type="input" class="form__field" placeholder="Phonenumber" name="Phonenumber" id='Phonenumber' required />
+            <label for="Phonenumber" class="form__label">Phonenumber</label>
+          </div>
+    
+          <div class="form__btn" (click)="sendRegisterRequest()">Register</div>
+    </div>
+    </div>
