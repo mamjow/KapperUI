@@ -16,7 +16,7 @@
   .date-timeblock.free{
       cursor:pointer;
       background:  var(--timeblock-free);
-    transition : transform 200ms ease-in, filter 200ms ease-in;
+      transition : transform 200ms ease-in, filter 200ms ease-in;
     
     &:hover{
       filter: grayscale(80%);
